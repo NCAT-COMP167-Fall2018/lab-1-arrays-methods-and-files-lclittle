@@ -18,7 +18,6 @@ public class PlayerStats {
     
     public static void readNamesandScores(String[] names, int[] scores, String fileName ){
         try {
-            //perform some operation that could cause an exception
             Scanner reader = new Scanner(new File(fileName));
             int count=0;
             
@@ -30,16 +29,21 @@ public class PlayerStats {
             
             }
             
-           // for(int i=0; i<79; i++){
-             //   names[i]=reader.next();
-               // scores[i]=reader.nextInt();
-            //}
+        //    for(int i=0; i<79; i++){
+        //        names[i]=reader.next();
+        //        scores[i]=reader.nextInt();
+        //    }
         }
     
         catch ( java.io.FileNotFoundException exception ) {
-            //Actions to perform if there is an exception
             Logger.getLogger(PlayerStats.class.getName()).log(Level.SEVERE, null, exception);
         } 
+    }
+    
+    public static void printData(String[] names, int[] scores){
+        String.format("%20s", "%20d", "-10%", names, scores);
+        
+        
     }
 
     /**
@@ -50,6 +54,9 @@ public class PlayerStats {
         String[] names = new String[80];
         int[] scores = new int[80];
         String fileName="playerData2.txt";
+        
+        //readNamesandScores(names, scores, args[0]);
+        printData(names, scores);
     }
     
 }
